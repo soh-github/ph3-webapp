@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             RecordsTableSeeder::class,
             learnedContentsTableSeeder::class,
             learnedLanguagesTableSeeder::class,
+            UserTableSeeder::class,
         ]);
     }
 }

@@ -18,9 +18,9 @@ class RecordsTableSeeder extends Seeder
     public function run()
     {
         $cb = Carbon::now();
-        $date = $cb->subDays(31);
+        $date = $cb->subDays(30);
 
-        for ($i=0; $i < 30; $i++) { 
+        for ($i=0; $i < 31; $i++) { 
             DB::table('records')->insert([
                 'learned_date' => $date,
                 'learned_hour' => Arr::random(range(1, 8)),

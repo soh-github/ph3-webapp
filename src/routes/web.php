@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WebappController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::middleware('auth')->group(function () {
+    Route::prefix('webapp')->group(function () {
+        Route::get('/', [WebappController::class, 'index'])->name('webapp.index');
+    });
 });
 
 Route::get('/dashboard', function () {
